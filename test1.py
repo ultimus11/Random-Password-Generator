@@ -23,18 +23,15 @@ SYMBOLS = ['@', '#', '$', '%', '=', ':', '?', '.', '/', '|', '~', '>',
 
 # combines all the character arrays above to form one array
 COMBINED_LIST = DIGITS + UPCASE_CHARACTERS + LOCASE_CHARACTERS + SYMBOLS
-
 # randomly select at least one character from each character set above
 rand_digit = random.choice(DIGITS)
 rand_upper = random.choice(UPCASE_CHARACTERS)
 rand_lower = random.choice(LOCASE_CHARACTERS)
 rand_symbol = random.choice(SYMBOLS)
-
 # combine the character randomly selected above
 # at this stage, the password contains only 4 characters but
 # we want a 12-character password
 temp_pass = rand_digit + rand_upper + rand_lower + rand_symbol
-
 print(temp_pass)
 # now that we are sure we have at least one character from each
 # set of characters, we fill the rest of
@@ -48,12 +45,10 @@ for x in range(MAX_LEN - 4):
 	# where the beginning of the password is predictable
 	temp_pass_list = array.array('u', temp_pass)
 	random.shuffle(temp_pass_list)
-
 # traverse the temporary password array and append the chars
 # to form the password
 password = ""
 for x in temp_pass_list:
-		password = password + x
-		
+		password = password + x		
 # print out password
 print(password)
